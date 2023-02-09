@@ -1,0 +1,338 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans:wght@500&display=swap");
+
+.skip {
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0 0 0 0);
+}
+
+/* base */
+body,
+section,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+ul,
+ol,
+p,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+}
+em,address{font-style: normal;}
+button{padding:0; border:none; background:inherit; cursor: pointer;}
+
+/* color guide */
+:root {
+  --color-main-text: #2e2e2e;
+  --color-sub-text: #636363;
+  --color-main-color: #20265b;
+  --color-sub-color: #ee312f;
+  --color-bg-color: #f3f3f3;
+}
+
+/* 스킵 네비 */
+#skipNavi a:hover,
+#skipNavi a:active,
+#skipNavi a:focus {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  margin: 0;
+  clip: auto;
+  text-align: center;
+  text-decoration: underline;
+  background-color: lightblue;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--color-sub-text);
+}
+.bg_grey {
+  background-color: var(--color-bg-color);
+}
+.button.md{font-size:20px; padding:14px 65px; color:#0C205C; font-weight: 700; border-radius: 10px; background-color: rgba(255, 255, 255, .6); display: inline-block;}
+.en{font-family: "Noto Sans", sans-serif;}
+
+header h1{width:50px; height:22px; display: inline-block; background: url(../images/logo/logo.png) 50% 50% no-repeat;}
+header nav{display: none;}
+
+@media screen and (min-width: 1200px){
+  .wrap {
+    width: 1366px;
+    margin: auto;
+    padding: 0 83px;
+  }
+  /* header */
+  header {
+    height: 93px;
+    background-color: #fff;
+    box-shadow: 0px 1px 1px #00000029;
+  }
+  header.fixed{width:100%; position:fixed; z-index: 1;}
+  header .wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+  header h1 {
+    width: 90px;
+    height: 38.57px;
+    display: inline-block;
+    background: url(../images/logo/logo.png) 50% 50% no-repeat;
+    margin-top: 30px;
+  }
+  header nav > .main_menu {
+    display: flex;
+  }
+  header nav > .main_menu > li > a {
+    height:93px;
+    line-height: 93px;
+    display: inline-block;
+    padding: 0 40px;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--color-main-text);
+  }
+  header nav > .main_menu > li > a:hover, header nav .sub_menu > li > a:hover{color:#4E4E88;}
+  header nav .sub_menu{display: none; width:146px; background:url(../images/bg/bg_submenu.png) no-repeat 50% 0 #fff; border-radius: 0 0 10px 10px; margin:auto; position: relative; z-index: 1; border-width:0 1px 1px 1px; border-style: solid; border-color:lightgray}
+  header nav .sub_menu.on{display: block;}
+  header nav .sub_menu > li{height:50px;}
+  header nav .sub_menu > li > a{width:100%; height:100%; display:inline-block; font-size:16px; text-align: center; line-height: 50px;}
+  header .util_box > .util {
+    display: flex;
+  }
+  header .util_box{padding-top: 39px;}
+  header .util_box > .util > li.mypage a{width:13px; height:15px; background:url(../images/ico/ico_user.png) no-repeat 50% 0; display: inline-block;}
+  header .util_box > .util > li a, header .util_box > ul > li > .lang_default {
+    font-family: "Noto Sans", sans-serif;
+    color: var(--color-main-text);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 0 14px;
+  }
+  header .util_box > .util > li > a{position: relative;}
+  header .util_box > .util > li > a::after {
+    content: "";
+    width: 2px;
+    height: 10px;
+    background-color: #636363;
+    position: absolute;
+    right: 0;
+    top: 4px;
+  }
+  header .util_box > .util > li > .lang_default{cursor: pointer; position: relative; padding-right:25px;}
+  header .util_box > .util > li > .lang_default::after{content:''; width:10px; height:6px; background:url(../images/ico/ico_util_arrow.png) no-repeat; position: absolute; right:0; top:7px;}
+  header .util_box > .util > .lang.active .lang_default::after{transform: rotateX(180deg);}
+  header .util_box > .util > .lang.active .lang_dropdown{display: block;}
+  header .util_box > .util > .lang .lang_dropdown{display: none; border:1px solid #707070; border-radius: 5px; background-color:#fff;}
+
+  /* main visual */
+  .main_visual {
+    height: 573px;
+    background-color: #f5f5f5;
+  }
+  .main_visual .wrap{display: flex; justify-content: space-between; padding:0;}
+  .main_visual .text_wrap{width:calc(100% - 774px);}
+  .main_visual .text_wrap h3 {
+    color: var(--color-main-text);
+    padding: 216px 0 0 83px;
+  }
+  .main_visual .text_wrap h3 .sm_txt {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+  .main_visual .text_wrap h3 .lg_txt {
+    font-size: 40px;
+  }
+  .main_visual .slider_wrap{width:773px; padding: 45px 0;}
+  /* mcontent */
+  #mcontent h3 {
+    color: var(--color-main-text);
+    font-size: 35px;
+    font-weight: 700;
+  }
+  /* HMM의 윤리경영 */
+  #mcontent .business_ethics {
+    height: 765px;
+    padding: 146px 0 113px 0;
+  }
+  #mcontent .business_ethics p {
+    font-size: 22px;
+    font-weight: 400;
+    padding: 12px 0 75px 0;
+  }
+  #mcontent .business_ethics ul {
+    display: flex;
+    justify-content: space-between;
+  }
+  #mcontent .business_ethics ul li {
+    width: 384px;
+    height: 264px;
+    border-radius: 10px;
+    background-color: var(--color-bg-color);
+  }
+  #mcontent .business_ethics ul li a {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+  }
+  #mcontent .business_ethics ul li dl {
+    padding: 43px 0 0 29px;
+  }
+  #mcontent .business_ethics ul li dt {
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--color-main-text);
+    position: relative;
+    padding: 8px 0 18px;
+  }
+  #mcontent .business_ethics ul li dd {
+    padding-right: 40px;
+  }
+  #mcontent .business_ethics ul li dt::before {
+    content: "";
+    width: 50px;
+    height: 4px;
+    background-color: var(--color-sub-color);
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  #mcontent .business_ethics .more {
+    width: 50px;
+    height: 50px;
+    border-radius: 0 0 10px 0;
+    background-color: #20265b;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  #mcontent .business_ethics .more::before {
+    content: "";
+    width: 1px;
+    height: 30px;
+    background-color: #f3f3f3;
+    position: absolute;
+    left: 50%;
+    top: 10px;
+  }
+  #mcontent .business_ethics .more::after {
+    content: "";
+    width: 30px;
+    height: 1px;
+    background-color: #f3f3f3;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+  }
+  /* HMM 윤리강령 */
+  #mcontent .code_of_ethics {
+    height: 614px;
+    padding: 73px 0 99px 0;
+  }
+  #mcontent .code_of_ethics h3{padding-bottom:91px;}
+  #mcontent .code_of_ethics ul {
+    display: flex;
+    justify-content: space-between;
+  }
+  #mcontent .code_of_ethics ul li {
+    width: 384px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: #20265b;
+  }
+  #mcontent .code_of_ethics ul li dl{padding:50px 0 0 40px;}
+  #mcontent .code_of_ethics ul li a{display:block; width:100%; height:100%; color: #F3F3F3;}
+  #mcontent .code_of_ethics ul li .ethics_tit1{font-size:15px;}
+  #mcontent .code_of_ethics ul li .ethics_tit2{font-size: 30px; font-weight: 700; padding:3px 0 76px 0;}
+  #mcontent .code_of_ethics ul li .ethics_txt{font-size: 19px;}
+  /* 사이버제보실 */
+  #mcontent .ethics_hotline {
+    height: 620px;
+    padding:110px 0;
+  }
+  #mcontent .ethics_hotline h3{color:#F3F3F3; font-weight: 700;}
+  #mcontent .ethics_hotline .wrap{width:1200px; height:399px; color:#F3F3F3; background:url(../images/img/img_ethics_hotline.png) no-repeat; padding:74px 0 0 59px;}
+  #mcontent .ethics_hotline .sub_txt1{padding-top: 15px; font-weight:300;}
+  #mcontent .ethics_hotline .sub_txt2{padding-top: 3px; font-weight:300;}
+  #mcontent .ethics_hotline .sub_txt_email{padding-top: 9px; font-weight:500;}
+  #mcontent .ethics_hotline .b_hotline{margin-top: 47px;}
+  /* 사회공헌 활동소식 */
+  #mcontent .ethics_board {
+    height: 968px;
+    padding:95px 0 132px 0;
+  }
+  #mcontent .ethics_board h3{text-align: center; padding-bottom: 95px;}
+  #mcontent .ethics_board .board_box{border-width:1px 0 1px 0; border-style:solid; border-color:#707070;}
+  #mcontent .ethics_board .board_box li{height:197px; border-bottom:1px solid #D2D2D2;}
+  #mcontent .ethics_board .board_box li:last-child{border-bottom:0;}
+  #mcontent .ethics_board .board_box li a{width:100%; height:100%; display: flex; justify-content: space-between; padding: 40px 0;}
+  #mcontent .ethics_board .board_box li a .left{display: flex;}
+  #mcontent .ethics_board .board_box li a .left .board_cont{padding-left: 23px;}
+  #mcontent .ethics_board .board_box .board_tit{color: var(--color-main-text); font-size: 25px; font-weight: 500;}
+  #mcontent .ethics_board .board_box .board_date{color: var(--color-main-text); font-size: 25px; font-weight: 500;}
+  #mcontent .ethics_board .board_box .board_txt{color: var(--color-sub-text); font-size: 16px; font-weight: 300; padding-top: 23px;}
+  /* footer */
+  #footer {
+    height: 150px;
+    background-color: #414141;
+  }
+  #footer .wrap{display: flex; justify-content: space-between;}
+  #footer .wrap .left{display: flex;}
+  #footer .f_logo{width:81px; height:35px; display: inline-block; background:url(../images/logo/f_logo.png) no-repeat; margin: 37px 67px 0 30px;}
+  #footer .txt_box{color:#F3F3F3; font-size:15px; padding-top: 33px;}
+  #footer .txt_box address{padding:10px 0;}
+  #footer .txt_box .txt_list{display:flex;}
+  #footer .txt_box .txt_list li{padding:0 13px 0 12px; position: relative;}
+  #footer .txt_box .txt_list li:first-child{padding-left:0;}
+  #footer .txt_box .txt_list li::after{content:''; width:1px; height:8px; background-color: #6F6F6F; position:absolute; right:0; top:7px;}
+  #footer .txt_box .txt_list li:last-child::after{background:none;}
+  #footer .txt_box .txt_list li a{width:100%; height:100%; display: inline-block;}
+  #footer .txt_box .txt_list li em{color:#B30006; font-weight:700;}
+  #footer .family_site{padding-top: 39px;}
+  #footer .family_site .family_txt{width:153px; height:34px; border:1px solid #707070; color:#f3f3f3; font-size: 13px; padding:6px 0 0 17px; cursor: pointer; position: relative;}
+  #footer .family_site .family_txt::after{content:''; width:10px; height:6px; background:url(../images/ico/ico_family_arrow.png) no-repeat; position: absolute; right:13px; top:14px;}
+  #footer .family_site.active .family_txt::after{transform: rotateX(180deg);}
+  #footer .family_site .dropmenu{opacity: 0; visibility: hidden; border:1px solid #707070; margin-top:-1px; position: relative; bottom:70px; background-color:#414141}
+  #footer .family_site.active .dropmenu{opacity: 1; visibility: visible; transition: all .3s;}
+  #footer .family_site .dropmenu li{height:34px;}
+  #footer .family_site .dropmenu li a{width:100%; height:100%; color:#f3f3f3; font-size: 13px; padding:6px 0 0 17px;}
+
+  /* 맨위로 가기 */
+  .btn_top{position: fixed; right:20px; bottom:20px;}
+  .btn_top .goto_top{width:57px; height:57px; background: url(../images/ico/ico_top.png) no-repeat 50% 50% #E8E8E8; border-radius: 5px;}
+  
+}
