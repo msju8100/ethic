@@ -84,8 +84,33 @@ body {
 .button.md{font-size:20px; padding:14px 65px; color:#0C205C; font-weight: 700; border-radius: 10px; background-color: rgba(255, 255, 255, .6); display: inline-block;}
 .en{font-family: "Noto Sans", sans-serif;}
 
+.wrap{padding:0 16px;}
+header{box-shadow: 0px 1px 1px #00000029;}
 header h1{width:50px; height:22px; display: inline-block; background: url(../images/logo/logo.png) 50% 50% no-repeat;}
 header nav{display: none;}
+
+/* main visual */
+.main_visual .text_wrap h3 .sm_txt {font-size: 15px; font-weight:400; color:var(--color-main-text); padding-top:59px 0 8px 0;}
+.main_visual .text_wrap h3 .lg_txt{font-size:30px; font-weight:700; color:var(--color-main-text); padding-bottom: 53px;}
+.main_visual .slick-slide{border-radius: 5px; overflow: hidden;}
+
+/* mcontent */
+#mcontent h3 {
+  color: var(--color-main-text);
+  font-size: 25px;
+  font-weight: 700;
+}
+#mcontent .business_ethics p {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 12px 0 75px 0;
+}
+#mcontent .business_ethics ul li {
+  width: 100%;
+  height: 264px;
+  border-radius: 10px;
+  background-color: var(--color-bg-color);
+}
 
 @media screen and (min-width: 1200px){
   .wrap {
@@ -97,13 +122,13 @@ header nav{display: none;}
   header {
     height: 93px;
     background-color: #fff;
-    box-shadow: 0px 1px 1px #00000029;
   }
   header.fixed{width:100%; position:fixed; z-index: 1;}
   header .wrap {
     display: flex;
     justify-content: space-between;
   }
+  header nav{display: block;}
   header h1 {
     width: 90px;
     height: 38.57px;
@@ -178,9 +203,7 @@ header nav{display: none;}
   .main_visual .slider_wrap{width:773px; padding: 45px 0;}
   /* mcontent */
   #mcontent h3 {
-    color: var(--color-main-text);
     font-size: 35px;
-    font-weight: 700;
   }
   /* HMM의 윤리경영 */
   #mcontent .business_ethics {
@@ -189,7 +212,6 @@ header nav{display: none;}
   }
   #mcontent .business_ethics p {
     font-size: 22px;
-    font-weight: 400;
     padding: 12px 0 75px 0;
   }
   #mcontent .business_ethics ul {
