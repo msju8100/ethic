@@ -85,12 +85,42 @@ body {
 .en{font-family: "Noto Sans", sans-serif;}
 
 .wrap{padding:0 16px;}
-header{box-shadow: 0px 1px 1px #00000029;}
-header h1{width:50px; height:22px; display: inline-block; background: url(../images/logo/logo_pc.png) no-repeat 50% 50%/contain;}
-header nav{display: none;}
+header{height:56px; box-shadow: 0px 1px 1px #00000029;}
+header .wrap{display:flex; justify-content: space-between;}
+header h1{width:50px; height:22px; display: inline-block; background: url(../images/logo/logo_pc.png) no-repeat 50% 50%/contain; margin:18px 0 0 8px;}
+header .menu_wrap{display: none; width:100vw; height:100vh; background-color:#fff; position:fixed; left:0; top:0; padding:0 16px 0 16px; z-index: 1;}
+header .menu_wrap.on{display: block;}
+header .menu_wrap .menu_top{height:73px; position: relative;}
+header .menu_wrap .menu_close{width:21px; height:21px; display: block; background: url(../images/ico/ico_close_menu.png) no-repeat 50% 50%/contain; position: absolute; right:8px; top:25px;}
+header .open_menu{width:26px; height:21px; margin:19px 8px 0 0;}
+header .open_menu a{display: inline-block; width:100%; height:100%; background: url(../images/ico/ico_open_menu.png) no-repeat 50% 50%/contain;}
+header nav > .main_menu > li{border-top:1px solid var(--color-main-text);}
+header nav > .main_menu > li > a{width:100%; height:100%; font-size:18px; font-weight:500; color: var(--color-main-text); display: inline-block; padding: 17px 11px;}
+header nav > .main_menu > .sub_open{width:20px; height:20px; display: inline-block;}
+header nav .sub_menu{display:none; border-top:1px solid var(--color-main-text); padding:10px 0;}
+header nav .sub_menu > li > a{width:100%; height:100%; font-size:16px; color: var(--color-sub-text); padding: 7.5px 11px; display: inline-block;}
+header nav .sub_menu.on{display: block;}
+header .util_box{border-top:1px solid var(--color-main-text); padding-top: 10px;}
+header .util_box > .util {
+  display: flex;
+}
+header .util_box > .util > li.mypage{width:19px; height:21px; position: absolute; right:68px; top:25px;}
+header .util_box > .util > li.mypage a{width:100%; height:100%; background:url(../images/ico/ico_user_mo.png) no-repeat 50% 50%/contain; display: block;}
+header .util_box > .util > li a, header .util_box > ul > li > .lang_default {
+  font-family: "Noto Sans", sans-serif;
+  color: var(--color-main-text);
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0 14px;
+}
+header .util_box > .util > li > .lang_default{cursor: pointer; position: relative; padding-right:25px;}
+header .util_box > .util > li > .lang_default::after{content:''; width:10px; height:6px; background:url(../images/ico/ico_util_arrow.png) no-repeat; position: absolute; right:0; top:7px;}
+header .util_box > .util > .lang.active .lang_default::after{transform: rotateX(180deg);}
+header .util_box > .util > .lang.active .lang_dropdown{display: block;}
+header .util_box > .util > .lang .lang_dropdown{display: none; border:1px solid #707070; border-radius: 5px; background-color:#fff;}
 
 /* main visual */
-.main_visual .text_wrap h3 .sm_txt {font-size: 15px; font-weight:400; color:var(--color-main-text); padding-top:59px 0 8px 0;}
+.main_visual .text_wrap h3 .sm_txt {font-size: 15px; font-weight:400; color:var(--color-main-text); padding:59px 0 8px 0;}
 .main_visual .text_wrap h3 .lg_txt{font-size:30px; font-weight:700; color:var(--color-main-text); padding-bottom: 53px;}
 .main_visual .slick-slide{border-radius: 5px; overflow: hidden;}
 
@@ -109,7 +139,6 @@ header nav{display: none;}
 }
 #mcontent .business_ethics ul li {
   width: 100%;
-  height: 264px;
   border-radius: 10px;
   background-color: var(--color-bg-color);
   margin-bottom: 10px;
@@ -130,8 +159,8 @@ header nav{display: none;}
   top: 0;
 }
 #mcontent .business_ethics ul li dd {
-  font-size: 15px;
-  padding-right: 40px;
+  font-size: 16px;
+  padding:0 40px 40px 0;
 }
 #mcontent .business_ethics ul li a {
   width: 100%;
@@ -140,8 +169,8 @@ header nav{display: none;}
   position: relative;
 }
 #mcontent .business_ethics .more {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   border-radius: 0 0 10px 0;
   background-color: #20265b;
   display: inline-block;
@@ -152,7 +181,7 @@ header nav{display: none;}
 #mcontent .business_ethics .more::before {
   content: "";
   width: 1px;
-  height: 30px;
+  height: 25px;
   background-color: #f3f3f3;
   position: absolute;
   left: 50%;
@@ -160,7 +189,7 @@ header nav{display: none;}
 }
 #mcontent .business_ethics .more::after {
   content: "";
-  width: 30px;
+  width: 25px;
   height: 1px;
   background-color: #f3f3f3;
   position: absolute;
@@ -170,7 +199,7 @@ header nav{display: none;}
 /* HMM 윤리강령 */
 #mcontent .code_of_ethics {
 }
-#mcontent .code_of_ethics h3{padding-bottom:91px;}
+#mcontent .code_of_ethics h3{padding:60px 0 45px;}
 #mcontent .code_of_ethics ul {
 }
 #mcontent .code_of_ethics ul li {
@@ -179,11 +208,11 @@ header nav{display: none;}
   background-color: #20265b;
   margin-bottom: 10px;
 }
-#mcontent .code_of_ethics ul li dl{padding:30px 0 0 23px;}
+#mcontent .code_of_ethics ul li dl{padding:30px 0 30px 23px;}
 #mcontent .code_of_ethics ul li a{display:block; width:100%; height:100%; color: #F3F3F3;}
 #mcontent .code_of_ethics ul li .ethics_tit1{font-size:15px;}
 #mcontent .code_of_ethics ul li .ethics_tit2{font-size: 25px; font-weight: 700; padding:3px 0 59px 0;}
-#mcontent .code_of_ethics ul li .ethics_txt{font-size: 15px;}
+#mcontent .code_of_ethics ul li .ethics_txt{font-size: 16px;}
 /* 사이버제보실 */
 #mcontent .ethics_hotline {
 }
@@ -203,10 +232,30 @@ header nav{display: none;}
 #mcontent .ethics_board .board_box li{border-bottom:1px solid #D2D2D2;}
 #mcontent .ethics_board .board_box li:last-child{border-bottom:0;}
 #mcontent .ethics_board .board_box li a{width:100%; height:100%; display: flex; justify-content: space-between; padding: 13px 0;}
-#mcontent .ethics_board .board_box .board_tit{color: var(--color-main-text); font-size: 18px; font-weight: 500;}
+#mcontent .ethics_board .board_box .left{width:calc(100% - 100px);}
+#mcontent .ethics_board .board_box .board_tit p{width:100%; font-size: 18px; font-weight: 500; color: var(--color-main-text); text-overflow: ellipsis; white-space: nowrap; word-wrap: normal; overflow: hidden;}
 #mcontent .ethics_board .board_box .board_date{color: var(--color-main-text); font-size: 18px; font-weight: 500;}
-#mcontent .ethics_board .board_box .board_txt{color: var(--color-sub-text); font-size: 14px; font-weight: 300; padding-top: 8px;}
-#mcontent .ethics_board .more{width:40px; height:40px; background-color: #AFAFAF; text-align: center; margin-top: 29px;}
+#mcontent .ethics_board .board_box .board_txt{height:28px; color: var(--color-sub-text); font-size: 14px; font-weight: 300; padding-top: 8px; overflow:hidden;}
+#mcontent .ethics_board .more{width:40px; height:40px; background-color: #AFAFAF; margin-top: 29px; position: relative; left:50%; margin-left:-20px;}
+#mcontent .ethics_board .more a{width:100%; height:100%; display: inline-block;}
+#mcontent .ethics_board .more::before {
+  content: "";
+  width: 1px;
+  height: 22px;
+  background-color: #f3f3f3;
+  position: absolute;
+  left: 50%;
+  top: 9px;
+}
+#mcontent .ethics_board .more::after {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background-color: #f3f3f3;
+  position: absolute;
+  left: 9px;
+  top: 50%;
+}
 
 #footer {
   background-color: #414141;
@@ -234,6 +283,7 @@ header nav{display: none;}
 #footer .family_site .dropmenu li a{width:100%; height:100%; color:#f3f3f3; font-size: 13px; padding:6px 0 0 17px;}
 
 @media screen and (min-width: 1200px){
+  .button.md{padding:14px 65px 15px 65px; font-size: 20px; border-radius: 10px;}
   .wrap {
     width: 1366px;
     margin: auto;
@@ -245,46 +295,33 @@ header nav{display: none;}
     background-color: #fff;
   }
   header.fixed{width:100%; position:fixed; z-index: 1;}
-  header .wrap {
-    display: flex;
-    justify-content: space-between;
-  }
+  header .menu_wrap{display: flex; width:auto; height:auto; position:static; background-color: transparent;}
+  header .menu_wrap .menu_top{display: none;}
   header nav{display: block;}
   header h1 {
     width: 90px;
     height: 38.57px;
     display: inline-block;
-    background: url(../images/logo/logo.png) 50% 50% no-repeat;
+    background: url(../images/logo/logo_pc.png) 50% 50% no-repeat;
     margin-top: 30px;
   }
   header nav > .main_menu {
     display: flex;
   }
+  header nav > .main_menu > li{border-top: none;}
   header nav > .main_menu > li > a {
     height:93px;
     line-height: 93px;
-    display: inline-block;
     padding: 0 40px;
-    font-weight: 500;
     font-size: 18px;
-    color: var(--color-main-text);
   }
   header nav > .main_menu > li > a:hover, header nav .sub_menu > li > a:hover{color:#4E4E88;}
-  header nav .sub_menu{display: none; width:146px; background:url(../images/bg/bg_submenu.png) no-repeat 50% 0 #fff; border-radius: 0 0 10px 10px; margin:auto; position: relative; z-index: 1; border-width:0 1px 1px 1px; border-style: solid; border-color:lightgray}
-  header nav .sub_menu.on{display: block;}
+  header nav .sub_menu{width:146px; background:url(../images/bg/bg_submenu.png) no-repeat 50% 0 #fff; border-radius: 0 0 10px 10px; margin:auto; position: relative; z-index: 1; border-width:0 1px 1px 1px; border-style: solid; border-color:lightgray}
   header nav .sub_menu > li{height:50px;}
   header nav .sub_menu > li > a{width:100%; height:100%; display:inline-block; font-size:16px; text-align: center; line-height: 50px;}
-  header .util_box > .util {
-    display: flex;
-  }
-  header .util_box{padding-top: 39px;}
-  header .util_box > .util > li.mypage a{width:13px; height:15px; background:url(../images/ico/ico_user.png) no-repeat 50% 0; display: inline-block;}
+  header .util_box{padding-top: 39px; border-top: none;}
   header .util_box > .util > li a, header .util_box > ul > li > .lang_default {
-    font-family: "Noto Sans", sans-serif;
-    color: var(--color-main-text);
     font-size: 15px;
-    font-weight: 500;
-    padding: 0 14px;
   }
   header .util_box > .util > li > a{position: relative;}
   header .util_box > .util > li > a::after {
@@ -296,11 +333,10 @@ header nav{display: none;}
     right: 0;
     top: 4px;
   }
-  header .util_box > .util > li > .lang_default{cursor: pointer; position: relative; padding-right:25px;}
-  header .util_box > .util > li > .lang_default::after{content:''; width:10px; height:6px; background:url(../images/ico/ico_util_arrow.png) no-repeat; position: absolute; right:0; top:7px;}
-  header .util_box > .util > .lang.active .lang_default::after{transform: rotateX(180deg);}
-  header .util_box > .util > .lang.active .lang_dropdown{display: block;}
-  header .util_box > .util > .lang .lang_dropdown{display: none; border:1px solid #707070; border-radius: 5px; background-color:#fff;}
+  header .util_box > .util > li.mypage{width:13px; height:15px; position: static;}
+  header .util_box > .util > li.mypage a{background:url(../images/ico/ico_user_pc.png) no-repeat 50% 50%/contain;}
+  header .open_menu{display: none;}
+
 
   /* main visual */
   .main_visual {
@@ -353,7 +389,8 @@ header nav{display: none;}
     padding: 8px 0 18px;
   }
   #mcontent .business_ethics ul li dd {
-    padding-right: 40px;
+    font-size: 20px;
+    padding:0 40px 0 0;
   }
   /* HMM 윤리강령 */
   #mcontent .code_of_ethics {
@@ -380,8 +417,9 @@ header nav{display: none;}
     height: 620px;
     padding:110px 0;
   }
-  #mcontent .ethics_hotline h3{}
+  #mcontent .ethics_hotline h3{font-size: 40px;}
   #mcontent .ethics_hotline .wrap{width:1200px; height:399px; background:url(../images/img/img_ethics_hotline_pc.png) no-repeat; padding:74px 0 0 59px;}
+  #mcontent .ethics_hotline .sub_txt1, #mcontent .ethics_hotline .sub_txt2, #mcontent .ethics_hotline .sub_txt_email{font-size: 20px;}
   #mcontent .ethics_hotline .sub_txt1{padding-top: 15px;}
   #mcontent .ethics_hotline .sub_txt2{padding-top: 3px;}
   #mcontent .ethics_hotline .sub_txt_email{padding-top: 9px;}
@@ -391,15 +429,16 @@ header nav{display: none;}
     height: 968px;
     padding:95px 0 132px 0;
   }
-  #mcontent .ethics_board h3{padding-bottom: 95px;}
+  #mcontent .ethics_board h3{font-size:35px; padding-bottom: 95px;}
   #mcontent .ethics_board .board_box{}
+  #mcontent .ethics_board .board_box .board_img{display: block;}
   #mcontent .ethics_board .board_box li{height:197px;}
   #mcontent .ethics_board .board_box li a{padding: 40px 0;}
   #mcontent .ethics_board .board_box li a .left{display: flex;}
   #mcontent .ethics_board .board_box li a .left .board_cont{padding-left: 23px;}
-  #mcontent .ethics_board .board_box .board_tit{color: var(--color-main-text); font-size: 25px;}
+  #mcontent .ethics_board .board_box .board_tit p{color: var(--color-main-text); font-size: 25px;}
   #mcontent .ethics_board .board_box .board_date{color: var(--color-main-text); font-size: 25px;}
-  #mcontent .ethics_board .board_box .board_txt{color: var(--color-sub-text); font-size: 16px; padding-top: 23px;}
+  #mcontent .ethics_board .board_box .board_txt{height:auto; font-size: 16px; padding-top: 23px;}
   /* footer */
   #footer {
     height: 150px;
@@ -408,7 +447,7 @@ header nav{display: none;}
   #footer .wrap .left{display: flex;}
   #footer .f_logo{width:81px; height:35px; background:url(../images/logo/f_logo_pc.png) no-repeat; margin: 37px 67px 0 30px;}
   #footer .txt_box{color:#F3F3F3; font-size:15px; padding-top: 33px;}
-  #footer .txt_box address{padding:10px 0;}
+  #footer .txt_box address{padding:10px 0; border-top:none; margin-top: 0;}
   #footer .txt_box .txt_list li{padding:0 13px 0 12px; position: relative;}
   #footer .txt_box .txt_list li:first-child{padding-left:0;}
   #footer .txt_box .txt_list li::after{content:''; width:1px; height:8px; background-color: #6F6F6F; position:absolute; right:0; top:7px;}

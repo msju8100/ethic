@@ -1,5 +1,13 @@
 'use strict';
 
+//모바일 메뉴
+$('.open_menu a').on('click focusin', function(){
+    $('.menu_wrap').toggleClass('on')
+});
+$('.menu_close').on('click focusin', function(){
+    $('.menu_wrap').removeClass('on')
+});
+
 // gnb
 $('.main_menu > li').on('mouseover focusin', function(){
     $('.sub_menu').removeClass('on');
